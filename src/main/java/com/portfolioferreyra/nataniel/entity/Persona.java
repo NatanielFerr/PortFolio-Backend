@@ -9,6 +9,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Lob;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.Getter;
@@ -21,14 +22,25 @@ import lombok.Setter;
 public class Persona {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
+    
+    @NotNull
     private String nombre;
+    @NotNull
     private String apellido;
+    
     private String sobre_mi;
+    @NotNull
     private String titulo;
+    
+    @NotNull
     private String imagen;
+    
     private String banner;
-    private int edad;
+    
+//    @NotNull
+    private String descargacv;
+    
  
     @Lob
     private String email;
@@ -55,14 +67,14 @@ public class Persona {
     }
 
     
-    public Persona(String nombre, String apellido, String sobre_mi, String titulo, String imagen, String banner, int edad, String email, String contrasenia, List<Red> redes, List<Educacion> educaciones, List<Experiencia> experiencias, List<Proyecto> proyectos, List<Habilidad> habilidades) {
+    public Persona(String nombre, String apellido, String sobre_mi, String titulo, String imagen, String banner, String descargacv, String email, String contrasenia, List<Red> redes, List<Educacion> educaciones, List<Experiencia> experiencias, List<Proyecto> proyectos, List<Habilidad> habilidades) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.sobre_mi = sobre_mi;
         this.titulo = titulo;
         this.imagen = imagen;
         this.banner = banner;
-        this.edad = edad;
+        this.descargacv = descargacv;
         this.email = email;
         this.contrasenia = contrasenia;
     }
