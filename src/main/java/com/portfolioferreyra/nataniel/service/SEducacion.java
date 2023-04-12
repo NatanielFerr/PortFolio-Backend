@@ -40,11 +40,5 @@ public class SEducacion implements ISEducacion {
     public void editarEducacion(Educacion educ) {
         rEducacion.save(educ);
     }
-
-    @Override
-    public Educacion verEducacionesid(int id) {
-        Educacion educa = rEducacion.findById(id).orElse(null);
-        return educa;
-    }
     
 }

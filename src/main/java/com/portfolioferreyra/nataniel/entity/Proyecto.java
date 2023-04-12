@@ -7,6 +7,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
@@ -27,6 +28,7 @@ public class Proyecto {
     private int id;
     @NotNull
     private String proyecto;
+    @Lob
     private String descripcion;
     private String tecnologia;
     private String link;

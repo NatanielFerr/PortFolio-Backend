@@ -3,7 +3,6 @@ package com.portfolioferreyra.nataniel.controller;
 
 import com.portfolioferreyra.nataniel.entity.Proyecto;
 import com.portfolioferreyra.nataniel.service.SProyecto;
-import java.util.Date;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -14,7 +13,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -34,7 +32,7 @@ public class CProyecto {
     
     @GetMapping("/detail/{id}")
     @ResponseBody
-    public Proyecto verProyectosid (@PathVariable int id){
+    public Proyecto buscarProyecto (@PathVariable int id){
         return sProyecto.buscarProyecto(id);
     }
     
@@ -52,28 +50,11 @@ public class CProyecto {
         return "El proyecto fue eliminado correctamente";
     }
     
-    @PutMapping ("/update/{id}")
-    public Proyecto editarProyecto(@PathVariable int id, 
-                                 @RequestParam("proyecto") String nuevoProyecto,
-                                 @RequestParam("descripcion") String nuevaDescripcion,
-                                 @RequestParam("tecnologia") String nuevaTecnologia,
-                                 @RequestParam("link") String nuevoLink,
-                                 @RequestParam("logo") String nuevoLogo,
-                                 @RequestParam("inicio") Date nuevoInicio,
-                                 @RequestParam("fin") Date nuevoFin){
-        Proyecto pros = sProyecto.buscarProyecto(id);
-        
-        pros.setProyecto(nuevoProyecto);
-        pros.setDescripcion(nuevaDescripcion);
-        pros.setTecnologia(nuevaTecnologia);
-        pros.setLink(nuevoLink);
-        pros.setLogo(nuevoLogo);
-        pros.setInicio(nuevoInicio);
-        pros.setFin(nuevoFin);
-        
-        
-        sProyecto.crearProyecto(pros);
-        return pros;
+
+    
+    @PutMapping("/update/{id}")
+    public void editarProyecto(@RequestBody Proyecto pro) {
+        sProyecto.editarProyecto(pro);
     }
     
 }

@@ -1,8 +1,8 @@
 
 package com.portfolioferreyra.nataniel.controller;
 
-import com.portfolioferreyra.nataniel.entity.Educacion;
-import com.portfolioferreyra.nataniel.service.SEducacion;
+import com.portfolioferreyra.nataniel.entity.Cv;
+import com.portfolioferreyra.nataniel.service.SCv;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -18,44 +18,44 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping("educaciones")
+@RequestMapping("curriculums")
 @CrossOrigin(origins = "http://localhost:4200")
-public class CEducacion {
+public class CCv {
     @Autowired
-    SEducacion sEducacion;
+    SCv sCv;
     
     
     @GetMapping ("/lista")
     @ResponseBody
-    public List <Educacion> verEducaciones(){
-        return sEducacion.verEducaciones();
+    public List <Cv> verCvs(){
+        return sCv.verCvs();
     }
     
     @GetMapping("/detail/{id}")
     @ResponseBody
-    public Educacion buscarEducacion (@PathVariable int id){
-        return sEducacion.buscarEducacion(id);
+    public Cv buscarCv (@PathVariable int id){
+        return sCv.buscarCv(id);
     }
     
     @PostMapping ("/create")
-    public String crearEducacion (@RequestBody Educacion educac){
-        sEducacion.crearEducacion(educac);
-        return "La educacion fue creada correctamente";
+    public String crearCv (@RequestBody Cv cvs){
+        sCv.crearCv(cvs);
+        return "El Cv fue creado correctamente";
     }
     
     
     
     @DeleteMapping ("/delete/{id}")
-    public String borrarEducacion(@PathVariable int id){
-        sEducacion.borrarEducacion(id);
+    public String borrarCv(@PathVariable int id){
+        sCv.borrarCv(id);
         return "La educacion fue eliminada correctamente";
     }
 
     
     
      @PutMapping("/update/{id}")
-    public void editarEducacion(@RequestBody Educacion educ) {
-        sEducacion.editarEducacion(educ);
+    public void editarCv(@RequestBody Cv cvs) {
+        sCv.editarCv(cvs);
     }
     
 }

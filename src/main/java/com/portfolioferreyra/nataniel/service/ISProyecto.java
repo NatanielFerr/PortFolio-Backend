@@ -8,8 +8,6 @@ import java.util.List;
 public interface ISProyecto {
     public List<Proyecto> verProyectos();
     
-    public Proyecto verProyectosid(int id);
-    
     public void crearProyecto(Proyecto pro);
     
     public void borrarProyecto(int id);

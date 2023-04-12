@@ -9,13 +9,11 @@ public interface ISHabilidad {
     
     public List<Habilidad> verHabilidades();
     
-    public Habilidad verHabilidadesid(int id);
-    
     public void crearHabilidad(Habilidad hab);
     
     public void borrarHabilidad(int id);
     
     public Habilidad buscarHabilidad(int id);
     
-    public void editarHabilidad(Habilidad hab);
+    public void editarHabilidad(Habilidad habi);
 }

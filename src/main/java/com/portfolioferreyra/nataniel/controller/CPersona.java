@@ -35,9 +35,15 @@ public class CPersona {
         return persoServ.verPersonas();
     }
     
+    @GetMapping("detail/{id}")
+    @ResponseBody
+    public Persona buscarPersona (@PathVariable Long id){
+        return persoServ.buscarPersona(id);
+    }
+    
     @PostMapping ("new/persona")
-    public String agregarPersona (@RequestBody Persona pers){
-        persoServ.crearPersona(pers);
+    public String agregarPersona (@RequestBody Persona per){
+        persoServ.crearPersona(per);
         return "La persona fue creada correctamente";
     }
     
@@ -49,19 +55,32 @@ public class CPersona {
         return "La persona fue eliminada correctamente";
     }
     
-    @PutMapping ("personas/editar/{id}")
-    public Persona editarPersona(@PathVariable Long id, 
-                                 @RequestParam("nombre") String nuevoNombre, 
-                                 @RequestParam("apellido") String nuevoApellido, 
-                                 @RequestParam("edad") int nuevaEdad){
-        Persona perso = persoServ.buscarPersona(id);
-        
-        perso.setApellido(nuevoApellido);
-        perso.setNombre(nuevoNombre);
-        perso.setEdad(nuevaEdad);
-        
-        persoServ.crearPersona(perso);
-        return perso;
+//    @PutMapping ("editar/persona/{id}")
+//    public Persona editarPersona(@PathVariable Long id, 
+//                                 @RequestParam("nombre") String nuevoNombre, 
+//                                 @RequestParam("apellido") String nuevoApellido, 
+//                                 @RequestParam("descargacv") String nuevaDescargacv,
+//                                 @RequestParam("titulo") String nuevoTitulo,
+//                                 @RequestParam("sobre_mi") String nuevoSobre_mi,
+//                                 @RequestParam("banner") String nuevoBanner,
+//                                 @RequestParam("imagen") String nuevaImagen){
+//        Persona perso = persoServ.buscarPersona(id);
+//        
+//        perso.setApellido(nuevoApellido);
+//        perso.setNombre(nuevoNombre);
+//        perso.setDescargacv(nuevaDescargacv);
+//        perso.setTitulo(nuevoTitulo);
+//        perso.setSobre_mi(nuevoSobre_mi);
+//        perso.setBanner(nuevoBanner);
+//        perso.setImagen(nuevaImagen);
+//        
+//        persoServ.crearPersona(perso);
+//        return perso;
+//    }
+    
+    @PutMapping("editar/persona/{id}")
+    public void editarPersona(@RequestBody Persona per) {
+        persoServ.editarPersona(per);
     }
     
     @GetMapping ("traer/personas")

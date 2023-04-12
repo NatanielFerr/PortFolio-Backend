@@ -1,8 +1,8 @@
 
 package com.portfolioferreyra.nataniel.controller;
 
-import com.portfolioferreyra.nataniel.entity.Educacion;
-import com.portfolioferreyra.nataniel.service.SEducacion;
+import com.portfolioferreyra.nataniel.entity.Red;
+import com.portfolioferreyra.nataniel.service.SRed;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -18,44 +18,41 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping("educaciones")
+@RequestMapping("redes")
 @CrossOrigin(origins = "http://localhost:4200")
-public class CEducacion {
+public class CRed {
     @Autowired
-    SEducacion sEducacion;
-    
+    SRed sRed;
     
     @GetMapping ("/lista")
     @ResponseBody
-    public List <Educacion> verEducaciones(){
-        return sEducacion.verEducaciones();
+    public List <Red> verRedes(){
+        return sRed.verRedes();
     }
+    
     
     @GetMapping("/detail/{id}")
     @ResponseBody
-    public Educacion buscarEducacion (@PathVariable int id){
-        return sEducacion.buscarEducacion(id);
+    public Red buscarRed (@PathVariable int id){
+        return sRed.buscarRed(id);
     }
     
     @PostMapping ("/create")
-    public String crearEducacion (@RequestBody Educacion educac){
-        sEducacion.crearEducacion(educac);
-        return "La educacion fue creada correctamente";
+    public String crearRed (@RequestBody Red rede){
+        sRed.crearRed(rede);
+        return "La habilidad fue creada correctamente";
     }
     
     
     
     @DeleteMapping ("/delete/{id}")
-    public String borrarEducacion(@PathVariable int id){
-        sEducacion.borrarEducacion(id);
-        return "La educacion fue eliminada correctamente";
-    }
-
-    
-    
-     @PutMapping("/update/{id}")
-    public void editarEducacion(@RequestBody Educacion educ) {
-        sEducacion.editarEducacion(educ);
+    public String borrarHabilidad(@PathVariable int id){
+        sRed.borrarRed(id);
+        return "La habilidad fue eliminada correctamente";
     }
     
+    @PutMapping("/update/{id}")
+    public void editarRed(@RequestBody Red redes) {
+        sRed.editarRed(redes);
+    }
 }

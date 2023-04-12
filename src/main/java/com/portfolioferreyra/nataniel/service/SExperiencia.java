@@ -41,10 +41,4 @@ public class SExperiencia implements ISExperiencia {
     public void editarExperiencia(Experiencia exp) {
         rExperiencia.save(exp);
     }
-
-    @Override
-    public Experiencia verExperienciasid(int id) {
-        Experiencia expe = rExperiencia.findById(id).orElse(null);
-        return expe;
-    }
 }

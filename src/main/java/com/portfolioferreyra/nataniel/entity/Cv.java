@@ -18,20 +18,17 @@ import org.hibernate.annotations.OnDeleteAction;
 @Getter @Setter
 
 @Entity
-@Table (name = "red")
-public class Red {
+@Table (name = "cvs")
+public class Cv {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @NotNull
-    private String logo;
-    @NotNull
-    private String link;
-    @NotNull
-    private String denominacion;
-    
-    
-    
+   private String link;
+   private String anio_derechos;
+   private String nombre;
+            
+  
     @ManyToOne
     
     @JoinColumn(name = "personaid", insertable=false, updatable=false)
@@ -40,19 +37,23 @@ public class Red {
     private Persona persona;
     
     private Long personaid;
-    
-    
-    public Red() {
+
+    public Cv() {
     }
-    public Red(String logo, String link, String denominacion, Persona persona, Long personaid) {
-        this.logo = logo;
+
+    public Cv(int id, String link, String anio_derechos, String nombre, Persona persona, Long personaid) {
+        this.id = id;
         this.link = link;
-        this.denominacion = denominacion;
+        this.anio_derechos = anio_derechos;
+        this.nombre = nombre;
         this.persona = persona;
         this.personaid = personaid;
     }
+
+
     
-    //Opción para que no haga un bug
+    
+     //Opción para que no haga un bug
     @JsonBackReference
     public Persona getPersona() {
         return persona;

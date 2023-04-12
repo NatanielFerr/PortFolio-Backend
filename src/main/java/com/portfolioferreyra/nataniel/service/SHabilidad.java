@@ -41,11 +41,5 @@ public class SHabilidad implements ISHabilidad {
         rHabilidad.save(habi);
     }
 
-    @Override
-    public Habilidad verHabilidadesid(int id) {
-        Habilidad habili = rHabilidad.findById(id).orElse(null);
-        return habili;
-    }
-
     
 }

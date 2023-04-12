@@ -28,7 +28,6 @@ public class Habilidad {
     @NotNull
     private String nombre;
     private String logo;
-    private String porcentaje_titulo;
     @NotNull
     @Min(0)
     @Max(100)
@@ -47,10 +46,9 @@ public class Habilidad {
     public Habilidad() {
     }
 
-    public Habilidad(String nombre, String logo, String porcentaje_titulo, Long porcentaje, Persona persona, Long personaid) {
+    public Habilidad(String nombre, String logo, Long porcentaje, Persona persona, Long personaid) {
         this.nombre = nombre;
         this.logo = logo;
-        this.porcentaje_titulo = porcentaje_titulo;
         this.porcentaje = porcentaje;
         this.persona = persona;
         this.personaid = personaid;

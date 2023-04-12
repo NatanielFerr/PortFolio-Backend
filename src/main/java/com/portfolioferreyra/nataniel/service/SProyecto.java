@@ -21,12 +21,6 @@ public class SProyecto implements ISProyecto {
     }
 
     @Override
-    public Proyecto verProyectosid(int id) {
-        Proyecto proyec = rProyecto.findById(id).orElse(null);
-        return proyec;
-    }
-
-    @Override
     public void crearProyecto(Proyecto pro) {
         rProyecto.save(pro);
     }

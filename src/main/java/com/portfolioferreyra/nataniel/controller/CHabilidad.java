@@ -29,17 +29,11 @@ public class CHabilidad {
         return sHabilidad.verHabilidades();
     }
     
-//    @GetMapping("/detail/{id}")
-//    public ResponseEntity<Habilidad> getById(@PathVariable("id") int id){
-//        Habilidad habi = sHabilidad.buscarHabilidad(id);
-//        return new ResponseEntity(habi, HttpStatus.OK);
-//    }
-    
     
     @GetMapping("/detail/{id}")
     @ResponseBody
-    public Habilidad verHabilidadesid (@PathVariable int id){
-        return sHabilidad.verHabilidadesid(id);
+    public Habilidad buscarHabilidad (@PathVariable int id){
+        return sHabilidad.buscarHabilidad(id);
     }
     
     @PostMapping ("/create")
@@ -56,22 +50,6 @@ public class CHabilidad {
         return "La habilidad fue eliminada correctamente";
     }
     
-//    @PutMapping ("/update/{id}")
-//    public Habilidad editarHabilidad(@PathVariable int id, 
-//                                 @RequestParam("nombre") String nuevoNombre,
-//                                 @RequestParam("logo") String nuevoLogo,
-//                                 @RequestParam("porcentaje_titulo") String nuevoPorcentaje_titulo,
-//                                 @RequestParam("porcentaje") Long nuevoPorcentaje){
-//        Habilidad habs = sHabilidad.buscarHabilidad(id);
-//        
-//        habs.setNombre(nuevoNombre);
-//        habs.setLogo(nuevoLogo);
-//        habs.setPorcentaje_titulo(nuevoPorcentaje_titulo);
-//        habs.setPorcentaje(nuevoPorcentaje);
-//        
-//        sHabilidad.crearHabilidad(habs);
-//        return habs;
-//    }
     
     @PutMapping("/update/{id}")
     public void editarHabilidad(@RequestBody Habilidad habi) {

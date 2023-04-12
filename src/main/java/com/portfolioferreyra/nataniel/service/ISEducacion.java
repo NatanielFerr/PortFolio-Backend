@@ -6,8 +6,6 @@ import java.util.List;
 
 public interface ISEducacion {
      public List<Educacion> verEducaciones();
-     
-     public Educacion verEducacionesid(int id);
     
     public void crearEducacion(Educacion educ);
     
