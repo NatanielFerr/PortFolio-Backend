@@ -1,7 +1,9 @@
 
-FROM openjdk:11-jdk-slim
-COPY --from=build /target/demo-0.0.1-SNAPSHOT.jar demo.jar
-# ENV PORT=8080
-EXPOSE 8080
-ENTRYPOINT ["java","-jar","demo.jar"]
+FROM amazoncorretto:17-alpine-jdk
+
+MAINTAINER portfolionataniel
+
+COPY target/nataniel-0.0.1-SNAPSHOT.jar nataniel-0.0.1-SNAPSHOT.jar
+
+ENTRYPOINT ["java","-jar","/nataniel-0.0.1-SNAPSHOT.jar"]
 
