@@ -18,7 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("habilidades")
-@CrossOrigin(origins = "https://portfolionatanielferreyra.web.app")
+//@CrossOrigin(origins = "https://portfolionatanielferreyra.web.app")
+@CrossOrigin(origins = "https://deploy-springboot-render-l4xg.onrender.com")
 public class CHabilidad {
     @Autowired
     SHabilidad sHabilidad;

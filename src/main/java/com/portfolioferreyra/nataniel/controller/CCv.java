@@ -19,7 +19,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("curriculums")
-@CrossOrigin(origins = "https://portfolionatanielferreyra.web.app")
+//@CrossOrigin(origins = "https://portfolionatanielferreyra.web.app")
+@CrossOrigin(origins = "https://deploy-springboot-render-l4xg.onrender.com")
 public class CCv {
     @Autowired
     SCv sCv;

@@ -19,7 +19,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("personas")
-@CrossOrigin(origins = "https://portfolionatanielferreyra.web.app")
+//@CrossOrigin(origins = "https://portfolionatanielferreyra.web.app")
+@CrossOrigin(origins = "https://deploy-springboot-render-l4xg.onrender.com")
 public class CPersona {
     @Autowired
     SPersona persoServ;
