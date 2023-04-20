@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.portfolioferreyra.nataniel.NatanielApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 25.403 s - in com.portfolioferreyra.nataniel.NatanielApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 23.694 s - in com.portfolioferreyra.nataniel.NatanielApplicationTests
