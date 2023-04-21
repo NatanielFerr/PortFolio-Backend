@@ -28,7 +28,7 @@ public class Persona {
     private String nombre;
     @NotNull
     private String apellido;
-    
+    @Lob
     private String sobre_mi;
     @NotNull
     private String titulo;
